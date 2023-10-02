@@ -5,21 +5,21 @@ using UnityEngine.AI;
 
 public class FloorManager : MonoBehaviour
 {
-    public GameObject finalFloor;
-    public int floors;
-    public float floorDistance;  
+    public GameObject finalFloor; //Floor prefab with the exit
+    public int floors; //Amount of floor to generate
+    public float floorDistance; //Distance between floors
 
-    public static FloorManager Instance;
+    public static FloorManager Instance; //Creates and instance of the FloorManager to acces it everywhere
 
-    public List<GameObject> floorInstances;
+    public List<GameObject> floorInstances; //List with floor prefabs
 
-    public List<Transform> enemyLocations;
-    public List<GameObject> floorObjects;   
+    public List<Transform> enemyLocations; //Locations where enemies can spawn
+    public List<GameObject> floorObjects; //List with the generated floors
 
-    private float floorRotation = 180;
+    private float floorRotation = 180; //Rotations required to fit the floors correctly
 
-    private List<NavMeshSurface> navMeshSurfaces;
-    private List<Vector3> waypoints;
+    private List<NavMeshSurface> navMeshSurfaces; //Navmesh for the enemies
+    private List<Vector3> waypoints; //List with waypoint triggers
     
     Vector3 curPos;
 
@@ -50,7 +50,7 @@ public class FloorManager : MonoBehaviour
         }        
         
         GameObject fFloor = Instantiate(finalFloor, curPos, Quaternion.identity);
-        if (floors % 2 == 1)
+        if (floors % 2 == 1) //Rotates every other floor to make the entrances link up
         {
             fFloor.transform.Rotate(fFloor.transform.localPosition.x, floorRotation, fFloor.transform.localPosition.z);
         }
@@ -66,7 +66,7 @@ public class FloorManager : MonoBehaviour
             waypoints.Add(pos);
         }
 
-        BakeNavmesh();                      
+        BakeNavmesh(); //Bakes the navmesh with all the floors for AI navigation
         SpawnManager.Instance.LoadFloors(floorObjects);
     }
 

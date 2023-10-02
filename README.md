@@ -1,5 +1,8 @@
 # TowerdivePublic
 
+This is a preview repository of a private project.
+The code is not present/fully present for privacy reasons.
+
 ![Towerdive1](https://github.com/ImAShark/TowerdivePublic/assets/32833605/43a6706d-2546-4379-b675-322e6f047ab6)
 
 ![Towerdive2](https://github.com/ImAShark/TowerdivePublic/assets/32833605/8b047ad5-2031-4ed6-9130-3d96507b13ca)

@@ -21,7 +21,7 @@ public class FloorManager : MonoBehaviour
     private List<NavMeshSurface> navMeshSurfaces; //Navmesh for the enemies
     private List<Vector3> waypoints; //List with waypoint triggers
     
-    Vector3 curPos; //Current position of the floor being generated, to account for height difference
+    Vector3 curPos; //Position of the current floor being generated, to account for height difference
 
     void Awake()
     {
